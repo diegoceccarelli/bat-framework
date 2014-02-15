@@ -251,8 +251,12 @@ public class SpotlightAnnotator implements Sa2WSystem{
 
 			String xml = out.toString("utf-8");
 			return xml;
-		} catch (UnsupportedEncodingException | TransformerException | ParserConfigurationException e) {
+		} catch (UnsupportedEncodingException e) {
 			throw new AnnotationException(e.getMessage());
+		} catch ( TransformerException e1 ){
+			throw new AnnotationException(e1.getMessage());
+		} catch ( ParserConfigurationException e2 ){
+			throw new AnnotationException(e2.getMessage());
 		}
 	}
 
@@ -291,7 +295,7 @@ public class SpotlightAnnotator implements Sa2WSystem{
 		 *             if there are no or invalid policies as argument.
 		 */
 		public static List<DisambiguationPolicy> parsePoliciesFromArgs(String[] args) {
-			List<DisambiguationPolicy> policies = new ArrayList<>();
+			List<DisambiguationPolicy> policies = new ArrayList<DisambiguationPolicy>();
 			for (String arg : args) {
 				try {
 					policies.add(DisambiguationPolicy.valueOf(arg));

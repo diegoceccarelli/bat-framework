@@ -57,8 +57,10 @@ public class AgdistisAnnotator implements D2WSystem {
 		String textWithMentions = createTextWithMentions(text, mentions);
 		try {
 			return getAnnotations(textWithMentions);
-		} catch (IOException | ParseException e) {
+		} catch (IOException e ) {
 			throw new AnnotationException(e.getMessage());
+		} catch (ParseException e2){
+			throw new AnnotationException(e2.getMessage());
 		}
 	}
 
@@ -85,14 +87,14 @@ public class AgdistisAnnotator implements D2WSystem {
 	}
 
 	private Set<Annotation> parseJsonStream(InputStream in) throws IOException, ParseException {
-		Set<Annotation> annotations = new HashSet<>();
+		Set<Annotation> annotations = new HashSet<Annotation>();
 
 		JSONArray namedEntities = (JSONArray) JSON_PARSER.parse(new InputStreamReader(in, "UTF-8"));
 		for (Object obj : namedEntities) {
 			JSONObject namedEntity = (JSONObject) obj;
 
-			long start = (long) namedEntity.get("start");
-			long offset = (long) namedEntity.get("offset");
+			long start = (Long) namedEntity.get("start");
+			long offset = (Long) namedEntity.get("offset");
 			int position = (int) start;
 			int length = (int) offset;
 
@@ -129,7 +131,7 @@ public class AgdistisAnnotator implements D2WSystem {
 	static String createTextWithMentions(String text, Set<Mention> mentionsSet) {
 		// Example: 'The <entity>University of Leipzig</entity> in <entity>Barack Obama</entity>.'
 
-		List<Mention> mentions = new ArrayList<>(mentionsSet);
+		List<Mention> mentions = new ArrayList<Mention>(mentionsSet);
 		Collections.sort(mentions, new Comparator<Mention>() {
 			@Override
 			public int compare(Mention left, Mention right) {

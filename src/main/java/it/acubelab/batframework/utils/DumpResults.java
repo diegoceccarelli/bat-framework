@@ -730,7 +730,7 @@ public class DumpResults {
 			Vector<D2WSystem> d2wAnnotators,
 			Vector<D> dss,
 			HashMap<String, HashMap<String, HashMap<String, HashMap<Float, MetricsResultSet>>>> threshRecords) {
-		Vector<TopicSystem> allAnns = new Vector<>();
+		Vector<TopicSystem> allAnns = new Vector<TopicSystem>();
 		if (sa2wAnnotators != null)
 			allAnns.addAll(sa2wAnnotators);
 		if (c2wAnnotators != null)
