@@ -66,7 +66,10 @@ public class BenchmarkMain {
 		 * wikiApi); Sa2WSystem spotLight = new SpotlightAnnotator(dbpApi,
 		 * wikiApi);
 		 */
-		Sa2WSystem wikiSense = new WikiSenseAnnotator();
+		
+			// FIXME WikiSenseAnnotator???? (diego)
+		//WikiSenseAnnotator wsa = new WikiSenseAnnotator();
+		//Sa2WSystem wikiSense = wsa;
 
 		System.out.println("Loading the datasets...");
 		A2WDataset dummyDs = new DummyDataset();
@@ -240,14 +243,17 @@ public class BenchmarkMain {
 		 * kddEditDs), api); System.out.println(); System.out.println();
 		 */
 
-		Pair<Float, MetricsResultSet> result = RunExperiments.getBestRecord(
-				resA2W, wam.getName(), wikiSense.getName(), aidaBDs.getName());
-		System.out.println("WikiSense dump - thr. " + result.first);
+// TODO commented "DIEGO"
+		// Pair<Float, MetricsResultSet> result = RunExperiments.getBestRecord(
+		// 		resA2W, wam.getName(), wikiSense.getName(), aidaBDs.getName());
+		// System.out.println("WikiSense dump - thr. " + result.first);
 
-		DumpData.dumpCompareList(aidaBDs.getTextInstanceList(), aidaBDs
-				.getA2WGoldStandardList(), ProblemReduction.Sa2WToA2WList(
-				BenchmarkCache.doSa2WAnnotations(wikiSense, aidaBDs, null, 0),
-				result.first), wikiApi);
+		
+		// DumpData.dumpCompareList(aidaBDs.getTextInstanceList(), aidaBDs
+// 				.getA2WGoldStandardList(), ProblemReduction.Sa2WToA2WList(
+// 				BenchmarkCache.doSa2WAnnotations(wikiSense, aidaBDs, null, 0),
+// 				result.first), wikiApi);
+/// diego
 
 		/** Proximity test */
 		// proximityTest(sa2wAnnotators, dssA2W, wikiApi, bestThresholds);

@@ -6,7 +6,7 @@ import java.io.IOException;
 import it.acubelab.batframework.cache.BenchmarkCache;
 import it.acubelab.batframework.problems.Sa2WSystem;
 import it.acubelab.batframework.systemPlugins.TagmeAnnotator;
-import it.acubelab.batframework.systemPlugins.WikiSenseAnnotator;
+//import it.acubelab.batframework.systemPlugins.WikiSenseAnnotator;
 import it.acubelab.batframework.utils.WikipediaApiInterface;
 
 public class TestWikisense {
@@ -19,8 +19,9 @@ public class TestWikisense {
 		
 		//WikipediaApiInterface api = new WikipediaApiInterface("benchmark/cache/wid.cache", "benchmark/cache/redirect.cache");
 
-		Sa2WSystem wikisense = new WikiSenseAnnotator();
-		wikisense.solveSa2W("Obama visited Italy's PM Berlusconi, after leaving China. They talked about blue sky\".}");
+		// DIego - WikiSenseANnotator
+		//Sa2WSystem wikisense = new WikiSenseAnnotator();
+	//	wikisense.solveSa2W("Obama visited Italy's PM Berlusconi, after leaving China. They talked about blue sky\".}");
 		
 	}
 
