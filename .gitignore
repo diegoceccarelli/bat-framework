@@ -1,1 +1,13 @@
-/bin
+*.class
+
+# Package Files #
+*.war
+*.ear
+*.svn
+.settings
+.classpath
+.project
+data
+target
+libs
+.DS_Store
