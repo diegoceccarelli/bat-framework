@@ -12,40 +12,72 @@
 			<artifactId>commons-lang</artifactId>
 			<version>2.6</version>
 		</dependency>
-
 		<dependency>
 			<groupId>it.unimi.dsi</groupId>
 			<artifactId>fastutil</artifactId>
 			<version>6.5.12</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>it.unimi.dsi</groupId>
 			<artifactId>dsiutils</artifactId>
 			<version>2.1.7</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
 			<version>1.1.1</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>net.sf.opencsv</groupId>
 			<artifactId>opencsv</artifactId>
 			<version>2.3</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>edu.illinois.cs.cogcomp</groupId>
+			<artifactId>edison</artifactId>
+			<version>0.2.9</version>
+		</dependency>
+		<dependency>
+			<groupId>edu.illinois.cs.cogcomp</groupId>
+			<artifactId>wikifier</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java</artifactId>
+			<version>2.3.0</version>
+		</dependency>
 		
 		
+		<dependency>
+			<groupId>mpi.aida</groupId>
+			<artifactId>aida</artifactId>
+			<version>20130218</version>
+		</dependency>
 	</dependencies>
+	<repositories>
+		<repository>
+			<id>java.net</id>
+			<url>https://maven.java.net/content/repositories/public/</url>
+		</repository>
+		<repository>
+			<id>edison</id>
+			<url>http://cogcomp.cs.illinois.edu/m2repo</url>
+		</repository>
+		
+		
+		<repository>
+			<id>local jars</id>
+			<name>local jars</name>
+			<url>file://${basedir}/maven-libs</url>
+		</repository>
+	</repositories>
 	<build>
 		<plugins>
 			<plugin>
@@ -54,7 +86,7 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
-					 <encoding>UTF-8</encoding>
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 			<plugin>

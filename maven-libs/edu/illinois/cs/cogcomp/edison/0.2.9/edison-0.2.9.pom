@@ -1,0 +1,144 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>edu.illinois.cs.cogcomp</groupId>
+	<artifactId>edison</artifactId>
+	<packaging>jar</packaging>
+	<version>0.2.9</version>
+
+	<name>edison</name>
+	<url>http://cogcomp.cs.uiuc.edu</url>
+
+
+	<repositories>
+		<repository>
+			<id>CogcompSoftware</id>
+			<name>CogcompSoftware</name>
+			<url>http://cogcomp.cs.illinois.edu/m2repo/</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>net.didion</groupId>
+			<artifactId>jwnl</artifactId>
+			<version>1.4_rc3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>edu.illinois.cs.cogcomp</groupId>
+			<artifactId>coreUtilities</artifactId>
+			<version>0.1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.thrift</groupId>
+			<artifactId>libthrift</artifactId>
+			<version>0.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.tartarus</groupId>
+			<artifactId>snowball</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>edu.illinois.cs.cogcomp</groupId>
+			<artifactId>curator-client</artifactId>
+			<version>0.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>edu.illinois.cs.cogcomp</groupId>
+			<artifactId>LBJLibrary</artifactId>
+			<version>2.8.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.5</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<links>
+						<link>http://download.oracle.com/javase/6/docs/api/</link>
+						<link>http://cogcomp.cs.illinois.edu/software/coreUtilities/apidocs/</link>
+					</links>
+					<show>public</show>
+				</configuration>
+
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jxr-maven-plugin</artifactId>
+				<version>2.0-beta-1</version>
+			</plugin>
+		</plugins>
+
+	</reporting>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+
+	</build>
+
+
+	<distributionManagement>
+		<repository>
+			<id>CogcompSoftware</id>
+			<name>CogcompSoftware</name>
+			<url>scp://bilbo.cs.uiuc.edu:/mounts/bilbo/disks/0/www/cogcomp/html/m2repo</url>
+		</repository>
+	</distributionManagement>
+</project>
